@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>MP Police</title>
+    <!-- <link href="css/styles.css" rel="stylesheet" /> -->
+    <link
+      href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css"
+      rel="stylesheet"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+    <script src = "https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js">    </script>
+    <script src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link href="https://cdn.rawgit.com/mdehoog/Semantic-UI/6e6d051d47b598ebab05857545f242caf2b4b48c/dist/semantic.min.css" rel="stylesheet" type="text/css" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css" />
+
+  
+  </head>
+  <style>
+          body {
+  background-image: url("/img/Cautionpic.png");
+ 
+}
+      .card_wrapper {
+    margin: 0 auto;
+    max-width: 1140px;
+    display: grid;
+    padding: 30px 28px;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-gap: 30px;
+    align-items: stretch;
+  }
+  
+  .card {
+    display: block;
+    transition: transform 0.3s cubic-bezier(0.374, 0.019, 0.035, 1.861);
+    background-color: black;
+    color: blanchedalmond;
+    border-radius: 4px;
+    box-shadow: 0 2px 2px 1px rgba(0, 0, 0, 0.1);
+    width: 300%;
+    height: 340px;
+  }
+  .card:hover {
+    transform: scale(1.03);
+  }
+  
+      </style>
+  <body class="sb-nav-fixed">
+    <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+      <a class="navbar-brand" href="#">SURAKSHA SOS</a
+      ><button
+        class="btn btn-link btn-sm order-1 order-lg-0"
+        id="sidebarToggle"
+        href="#"
+      >
+        <i class="fas fa-bars"></i></button
+      ><!-- Navbar Search-->
+      <form
+        class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0"
+      >
+        <div class="input-group">
+        
+        </div>
+      </form>
+      <!-- Navbar-->
+      <ul class="navbar-nav ml-auto ml-md-0">
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            id="userDropdown"
+            href="#"
+            role="button"
+            data-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false"
+            ><i class="fas fa-user fa-fw"></i
+          ></a>
+          <div
+            class="dropdown-menu dropdown-menu-right"
+            aria-labelledby="userDropdown"
+          >
+           
+            <a class="dropdown-item" href="/login">Logout</a>
+          </div>
+        </li>
+      </ul>
+    </nav>
+    <div id="layoutSidenav">
+      <div id="layoutSidenav_nav">
+        <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+          <div class="sb-sidenav-menu">
+            <div class="nav">
+              <a class="nav-link" href="/Home"
+                ><div class="sb-nav-link-icon">
+                  <i class="fas fa-tachometer-alt"></i>
+                </div>
+                Home</a
+              >
+              <div class="sb-sidenav-menu-heading">Investigate</div>
+              <a
+                class="nav-link collapsed"
+                href="/SOSAlerts"
+                
+                ><div class="sb-nav-link-icon">
+                  <i class="fas fa-columns"></i>
+                </div>
+                SOS Alerts Pending
+                <div class="sb-sidenav-collapse-arrow">
+                  <i class="fas fa-angle-down"></i></div
+              ></a>
+
+              <a class="nav-link collapsed" href="/SOSHistory">
+                <div class="sb-nav-link-icon">
+                  <i class="fas fa-book-open"></i>
+                </div>
+
+                SOS Alerts History
+                <div class="sb-sidenav-collapse-arrow">
+                  <i class="fas fa-angle-down"></i></div
+              ></a>
+
+              <div class="sb-sidenav-menu-heading">Reports By Users:</div>
+              <a class="nav-link collapsed" href="/VisualReports"
+                ><div class="sb-nav-link-icon">
+                  <i class="fas fa-columns"></i>
+                </div>
+                View Visual Reports
+                <div class="sb-sidenav-collapse-arrow">
+                  <i class="fas fa-angle-down"></i></div
+              ></a>
+
+              <a
+                class="nav-link collapsed"
+                href="/AudioReports"
+               
+              >
+                <div class="sb-nav-link-icon">
+                  <i class="fas fa-book-open"></i>
+                </div>
+
+                View Audio Reports
+                <div class="sb-sidenav-collapse-arrow">
+                  <i class="fas fa-angle-down"></i></div
+              ></a>
+
+              <div class="sb-sidenav-menu-heading">Miscellaneous</div>
+              <a class="nav-link" href="/AuthenticatedVisualReportHistory"
+                ><div class="sb-nav-link-icon">
+                  <i class="fas fa-chart-area"></i>
+                </div>
+                Authenticated Visual Reports</a
+              >
+              <a class="nav-link collapsed" href="/ShowUsers"
+                ><div class="sb-nav-link-icon">
+                  <i class="fas fa-user"></i>
+                </div>
+                Users
+                <div class="sb-sidenav-collapse-arrow"></div
+              ></a>
+             
+            </div>
+          </div>
+    
+        </nav>
+      </div>
+      <div id="layoutSidenav_content"  name="Reserved for test">
+        <main>
+          
+            <h1 class="mt-4 text-white">Emergency Response Portal</h1><br>
+            <h3 class="mt-4 text-white">SOS History</h3>
+
+            <div class ="ui segment">
+
+                <div id="list-div6" class = "ui middle aligned divided list">
+                    <div class = "list-item item">
+                        
+                    </div>
+                </div>
+            </div>
+
+            <!-- THIS IS THE BODY CONTENT-->
+            <!-- <div class="card_wrapper" id="card-div"> -->
+                <!-- <div class="card">
+                    
+                </div>
+                 -->
+
+               
+              <!-- </div> -->
+            
+         
+            
+          
+        </main>
+        <footer class="py-4 bg-light mt-auto">
+          <div class="container-fluid">
+            <div
+              class="d-flex align-items-center justify-content-between small"
+            >
+              <div class="text-muted">SURAKSHA SOS Web</div>
+              <!-- <div>
+                <a href="#">Privacy Policy</a>
+                &middot;
+                <a href="#">Terms &amp; Conditions</a>
+              </div> -->
+            </div>
+          </div>
+        </footer>
+      </div>
+    </div>
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="/JS/scripts.js"></script>
+  
+    <script src="https://www.gstatic.com/firebasejs/5.0.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.0.3/firebase-firestore.js"></script>
+    <script src="/JS/SOSHistory.js"></script>
+  </body>
+</html>
+
